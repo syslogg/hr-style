@@ -4,7 +4,7 @@
     "Hendy Rodrigues Ferreira da Silva <mr.syslogg@gmail.com>"
   ],
   "description": "framework css based on material design",
-  "main": "css/hrstyle.css",
+  "main": "css/hrstyle.less",
   "keywords": [
     "material-design",
     "material",
