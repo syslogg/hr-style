@@ -5,10 +5,14 @@ Framework developed for various applications based on material design using LESS
  
 # To-do list
 - Set default classes
-- Add structure **HTML** and **oocss**
+- Add structure **HTML** and **OOCSS**
 - Add style in elements
 - Add grid system
-- Set basic classes 
+
+# Dependencies
+- [JQuery](https://github.com/jquery/jquery)
+- [Less](https://github.com/less/less.js)
+- [Normalize.css](https://github.com/necolas/normalize.css/)
 
 # Credits
-- Hendy Rodrigues (mr.syslogg@gmail.com)
+- [Hendy Rodrigues](mr.syslogg@gmail.com)
