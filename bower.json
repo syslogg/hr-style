@@ -1,0 +1,22 @@
+{
+  "name": "hr style",
+  "authors": [
+    "Hendy Rodrigues Ferreira da Silva <mr.syslogg@gmail.com>"
+  ],
+  "description": "framework css based on material design",
+  "main": "css/hrstyle.css",
+  "keywords": [
+    "material-design",
+    "material",
+    "ui",
+    "hendy",
+    "rodrigues"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "less":"latest",
+    "jquery":"latest",
+    "normalize.css": "latest"
+  }
+}
