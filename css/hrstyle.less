@@ -39,17 +39,40 @@ Contribuite: TO-DO
 @font-alternative: 'Open Sans';
 @font-titles: 'Roboto';
 
-@font-small: 0.8em;
-@font-medium: 1.1em;
-@font-big: 1.6em;
+@font-small: 0.6em;
+@font-medium: 0.9em;
+@font-big: 1.2em;
 @font-family: @font-default, @font-alternative, @font-titles, 'sans-serif';
 
 /* - Buttons */
-@btn-padding: 10px;
+@btn-padding: 10px 20px;
+@btn-bg-color:#555;
+@btn-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+/* - Colors*/
+@color-success: #41c225;
+@color-danger: #991515;
+@color-warn: #cbc70a;
+@color-info: #1486d7;
+
+@color-success-hover: #2c8219;
+@color-danger-hover: #610d0d;
+@color-warn-hover: #817f06;
+@color-info-hover: #0b4975;
+
+@color-success-active: #143c0b;
+@color-danger-active: #300606;
+@color-warn-active: #4e4d04;
+@color-info-active: #072c48;
 
 /* # Mixins */
 
 .font-setting { font-family: @font-family; font-size:@font-medium;}
+/* - Free prefix */
+.transition-duration (@duration) { -webkit-transition-duration: @duration; -moz-transition-duration: @duration; -ms-transition-duration: @duration; -o-transition-duration: @duration; }
+.border-radius (@radius) { -webkit-border-radius: @radius; -moz-border-radius: @radius; -ms-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;}
+
+/* # Media queries */
 
 /* # Pattern */
 a {
@@ -60,11 +83,58 @@ a {
 }
 /* # OOCSS */
 /* ## Class BTN: */
-.hr-btn  { 
-    background:greenyellow;
+//Button group
+.btn-group .btn{ float:left;}
+.btn  { 
+    background:@btn-bg-color;
     padding:@btn-padding;
+    border:none;
+    color:white;
+    text-align:center;
+    text-decoration:none !important;
+    display:inline-block;
+
+    .transition-duration(0.4s);
     .font-setting;
+
+    &-shadow:hover { box-shadow: @btn-shadow; }
+
+    //Hover effect
+    &:hover { background:#333; }
+    &:active {background:#111;}
+
+    //Size
+    &-sm { font-size:@font-small; padding:7px 15px; }
+    &-md { font-size:@font-medium; }
+    &-bg { font-size:@font-big; }
+
+    //Structure
+    &-block { display:block; }
+    &-round { .border-radius(8px); }
+
+    //color
+    &-success { background: @color-success;
+        &:hover { background:@color-success-hover; }
+        &:active { background:@color-success-active; }
+    }
+    &-danger { background: @color-danger;
+        &:hover { background:@color-danger-hover; }
+        &:active { background:@color-danger-active; }
+    }
+    &-warn { background: @color-warn;
+        &:hover { background:@color-warn-hover; }
+        &:active { background:@color-warn-active; }
+    }
+    &-info { background: @color-info;
+        &:hover { background:@color-info-hover; }
+        &:active { background:@color-info-active; }
+    }
+
+    //Desabled
+    &-disabled { opacity:0.6; cursor:not-allowed; }
  }
+
+ 
 
 
 
