@@ -15,27 +15,5 @@ Designed using mobile-first for best experience in various devices.
 - [Less](https://github.com/less/less.js)
 - [Normalize.css](https://github.com/necolas/normalize.css/)
 
-# Design
-## Elements styled
-- button
-- table
-- form
-- menu
-- text
-- alert
-- modal
-
-## Utility:
-- clearfix;
-- floats;
-- hidden;
-
-# Grid system
-- To-do
-
-## Pattern
-- **Prefix:** hr-*
-- **Fonts:** Raleway (default), Open Sans (alternative), Roboto (titles) 
-
 # Credits
 - [Hendy Rodrigues](mr.syslogg@gmail.com)
