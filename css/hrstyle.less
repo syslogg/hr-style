@@ -5,8 +5,67 @@ Developer by Hendy Rodrigues F. Silva (mr.syslogg@gmail.com);
 - License: MIT;
 - Repository: http://github.com/syslogg/hr-style
 
-Contribuite:
+# Descrption:
+The HR Style was developed focusing on agile development and beautiful design based on material design always look for extensibility, perfomance and ease.
+Designed using mobile-first for best experience in various devices.
 
-- To-do list:
--- Set pattern
+Contribuite: TO-DO
+# Documentation
+
+# Element list:
+- button;
+- table;
+- form;
+- menu;
+- text;
+- alert;
+- modal;
+
+# Utility:
+- clearfix;
+- floats;
+- hidden;
+
+# Pattern
+- **prefix:** hr;
+- **font:** Raleway (default), Open Sans (alternative), Roboto (titles) 
 */
+/* # Imports */
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,400i,700|Roboto:400,700';
+
+/* # Settings  */
+/* - Fonts */
+@font-default: 'Raleway';
+@font-alternative: 'Open Sans';
+@font-titles: 'Roboto';
+
+@font-small: 0.8em;
+@font-medium: 1.1em;
+@font-big: 1.6em;
+@font-family: @font-default, @font-alternative, @font-titles, 'sans-serif';
+
+/* - Buttons */
+@btn-padding: 10px;
+
+/* # Mixins */
+
+.font-setting { font-family: @font-family; font-size:@font-medium;}
+
+/* # Pattern */
+a {
+    text-decoration:none;
+    &:hover {
+        text-decoration:underline;
+    }
+}
+/* # OOCSS */
+/* ## Class BTN: */
+.hr-btn  { 
+    background:greenyellow;
+    padding:@btn-padding;
+    .font-setting;
+ }
+
+
+
+
