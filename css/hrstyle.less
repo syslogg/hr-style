@@ -20,6 +20,9 @@ Contribuite: TO-DO
 - text (Done);
 - alert (Done);
 - modal;
+- panel;
+- cards;
+- label;
 
 # Utility:
 - clearfix;
@@ -178,13 +181,22 @@ hr { height:2px; background:#555; border:none; }
 /* ## Class TEXT */
 .text {
     &-center { text-align:center; }
+    &-left {text-align:left;}
+    &-right {text-align:right; }
 
+    &-justify { text-align:justify; }
     &-success { color:@color-success; }
     &-info { color:@color-info; }
     &-danger { color:@color-danger; }
     &-warn { color:@color-warn; }
 }
-
+ /* ## Class TABLE */
+ .table {
+     width:100%;
+     border-collapse: collapse;
+     th { text-align: left; border-bottom:1px solid #ddd; }
+     .table-cell-right { text-align:right; }
+ }
  
 
 
