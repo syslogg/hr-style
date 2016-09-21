@@ -13,7 +13,7 @@ Contribuite: TO-DO
 # Documentation
 
 # Element list:
-- button;
+- button(Done);
 - table;
 - form;
 - menu;
@@ -67,7 +67,7 @@ Contribuite: TO-DO
 
 /* # Mixins */
 
-.font-setting { font-family: @font-family; font-size:@font-medium;}
+.font-settings { font-family: @font-family; font-size:@font-medium;}
 /* - Free prefix */
 .transition-duration (@duration) { -webkit-transition-duration: @duration; -moz-transition-duration: @duration; -ms-transition-duration: @duration; -o-transition-duration: @duration; }
 .border-radius (@radius) { -webkit-border-radius: @radius; -moz-border-radius: @radius; -ms-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;}
@@ -95,7 +95,7 @@ a {
     display:inline-block;
 
     .transition-duration(0.4s);
-    .font-setting;
+    .font-settings;
 
     &-shadow:hover { box-shadow: @btn-shadow; }
 
@@ -133,6 +133,13 @@ a {
     //Desabled
     &-disabled { opacity:0.6; cursor:not-allowed; }
  }
+
+
+/* # Texts */
+body { .font-settings; }
+h1 { font-family: @font-titles; font-size:2em; }
+hr { height:2px; background:#555; border:none; }
+
 
  
 
