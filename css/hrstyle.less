@@ -72,7 +72,7 @@ Contribuite: TO-DO
 
 /* # Mixins */
 
-.font-settings { font-family: @font-family; font-size:@font-medium;}
+.font-settings { font-family: @font-family;}
 /* - Free prefix */
 .transition-duration (@duration) { -webkit-transition-duration: @duration; -moz-transition-duration: @duration; -ms-transition-duration: @duration; -o-transition-duration: @duration; }
 .border-radius (@radius) { -webkit-border-radius: @radius; -moz-border-radius: @radius; -ms-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;}
@@ -86,6 +86,29 @@ a {
         text-decoration:underline;
     }
 }
+
+/* # Texts */
+@font-size: 2.3em;
+@diff:0.2em;
+body { .font-settings; }
+
+h1 { font-size:@font-size; }
+h2 { font-size:@font-size - (1*@diff); }
+h3 { font-size:@font-size - (2*@diff); }
+h4 { font-size:@font-size - (3*@diff); }
+h5 { font-size:@font-size - (4*@diff); }
+h6 { font-size:@font-size - (5*@diff); }
+
+h1 , h2 ,h3 ,h4 ,h5 ,h6 {
+    font-family: @font-titles;
+    font-weight:normal;
+    small { color:#777; font-weight:normal; font-size:0.7em; }
+}
+
+hr { height:2px; background:#555; border:none; }
+
+.list-unstyled li { list-style:none; }
+
 /* # OOCSS */
 /* ## Class BTN: */
 //Button group
@@ -142,7 +165,7 @@ a {
 /* ## Class ALERT: */
 
 .alert {
-    padding:20px;
+    padding:20px; 
     &-border { border:1px solid; }
     &-success { color:@color-success; background:@color-success-opacity; }
     &-info { color:@color-info; background:@color-info-opacity; }
@@ -150,11 +173,7 @@ a {
     &-warn { color:@color-warn; background:@color-warn-opacity; }
 }
 
-/* # Texts */
-body { .font-settings; }
-h1 { font-family: @font-titles; font-size:2em; }
-hr { height:2px; background:#555; border:none; }
-.list-unstyled li { list-style:none; }
+
 
 /* ## Class TEXT */
 .text {
