@@ -13,12 +13,12 @@ Contribuite: TO-DO
 # Documentation
 
 # Element list:
-- button(Done);
+- button (Done);
 - table;
 - form;
 - menu;
-- text;
-- alert;
+- text (Done);
+- alert (Done);
 - modal;
 
 # Utility:
@@ -54,6 +54,11 @@ Contribuite: TO-DO
 @color-danger: #991515;
 @color-warn: #cbc70a;
 @color-info: #1486d7;
+
+@color-success-opacity: #ecf8e9;
+@color-danger-opacity: #f4e7e7;
+@color-warn-opacity: #f9f9e6;
+@color-info-opacity: #e7f2fb;
 
 @color-success-hover: #2c8219;
 @color-danger-hover: #610d0d;
@@ -130,16 +135,36 @@ a {
         &:active { background:@color-info-active; }
     }
 
-    //Desabled
+    //Disabled
     &-disabled { opacity:0.6; cursor:not-allowed; }
  }
 
+/* ## Class ALERT: */
+
+.alert {
+    padding:20px;
+    &-border { border:1px solid; }
+    &-success { color:@color-success; background:@color-success-opacity; }
+    &-info { color:@color-info; background:@color-info-opacity; }
+    &-danger { color:@color-danger; background:@color-danger-opacity; }
+    &-warn { color:@color-warn; background:@color-warn-opacity; }
+}
 
 /* # Texts */
 body { .font-settings; }
 h1 { font-family: @font-titles; font-size:2em; }
 hr { height:2px; background:#555; border:none; }
 .list-unstyled li { list-style:none; }
+
+/* ## Class TEXT */
+.text {
+    &-center { text-align:center; }
+
+    &-success { color:@color-success; }
+    &-info { color:@color-info; }
+    &-danger { color:@color-danger; }
+    &-warn { color:@color-warn; }
+}
 
  
 
