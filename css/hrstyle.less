@@ -53,6 +53,8 @@ Contribuite: TO-DO
 @btn-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
 /* - Colors*/
+@color-table-header: #444;
+
 @color-success: #41c225;
 @color-danger: #991515;
 @color-warn: #cbc70a;
@@ -73,12 +75,18 @@ Contribuite: TO-DO
 @color-warn-active: #4e4d04;
 @color-info-active: #072c48;
 
+@color-success-opacity-2: #d4dfd1;
+@color-danger-opacity-2: #dbcfcf;
+@color-warn-opacity-2: #e0e0cf;
+@color-info-opacity-2: #cfd9e1;
+
 /* # Mixins */
 
 .font-settings { font-family: @font-family;}
 /* - Free prefix */
 .transition-duration (@duration) { -webkit-transition-duration: @duration; -moz-transition-duration: @duration; -ms-transition-duration: @duration; -o-transition-duration: @duration; }
 .border-radius (@radius) { -webkit-border-radius: @radius; -moz-border-radius: @radius; -ms-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;}
+.box-shadow (@shadow) { -webkit-box-shadow: @shadow; -moz-box-shadow: @shadow; -ms-box-shadow: @shadow; -o-box-shadow: @shadow; box-shadow: @shadow;}
 
 /* # Media queries */
 
@@ -128,7 +136,7 @@ hr { height:2px; background:#555; border:none; }
     .transition-duration(0.4s);
     .font-settings;
 
-    &-shadow:hover { box-shadow: @btn-shadow; }
+    &-shadow:hover { .box-shadow(@btn-shadow); }
 
     //Hover effect
     &:hover { background:#333; }
@@ -194,8 +202,41 @@ hr { height:2px; background:#555; border:none; }
  .table {
      width:100%;
      border-collapse: collapse;
-     th { text-align: left; border-bottom:1px solid #ddd; }
+     padding:5px;
+     //border:8px solid #fff;
      .table-cell-right { text-align:right; }
+     .box-shadow(@btn-shadow);
+
+     //defines
+     th,td { padding:15px !important; }
+
+     //Styles
+     &-strip { tr:nth-child(even) { background: #f2f2f2 } }
+
+     //border
+     &-border tr { border-bottom:1px solid #eee; }
+
+     //Hover
+     &-hover { tr { &:hover td { background: #ccc !important;} } }
+     &-hover &-success:hover td { background:@color-success-opacity-2 !important; }
+     &-hover &-danger:hover td { background:@color-danger-opacity-2 !important; }
+     &-hover &-info:hover td { background:@color-info-opacity-2 !important; }
+     &-hover &-warn:hover td { background:@color-warn-opacity-2 !important; }
+
+     //Color
+     &-success { background:@color-success-opacity !important; }
+     &-danger { background:@color-danger-opacity !important; }
+     &-info { background:@color-info-opacity !important; }
+     &-warn { background:@color-warn-opacity !important; }
+     
+     //Header color
+     &-header-color th { background:@color-table-header; color:white;}
+
+     th { text-align: left; border-bottom:1px solid #ddd; }
+     td, th { padding:5px 0;
+        &:last-child { padding-bottom:0; }
+      }
+     
  }
  
 
