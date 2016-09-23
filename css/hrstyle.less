@@ -53,6 +53,10 @@ Contribuite: TO-DO
 @btn-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
 /* - Colors*/
+@color-menu-base: #282828;
+@color-menu-text: #fff;
+@color-menu-base-hover:#41c225;
+
 @color-table-header: #444;
 
 @color-success: #41c225;
@@ -87,6 +91,7 @@ Contribuite: TO-DO
 .transition-duration (@duration) { -webkit-transition-duration: @duration; -moz-transition-duration: @duration; -ms-transition-duration: @duration; -o-transition-duration: @duration; }
 .border-radius (@radius) { -webkit-border-radius: @radius; -moz-border-radius: @radius; -ms-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;}
 .box-shadow (@shadow) { -webkit-box-shadow: @shadow; -moz-box-shadow: @shadow; -ms-box-shadow: @shadow; -o-box-shadow: @shadow; box-shadow: @shadow;}
+.clearfix {   zoom: 1; &:before, &:after {     content: "";     display: table;   }   &:after {     clear:both;   } }
 
 /* # Media queries */
 
@@ -262,7 +267,51 @@ hr { height:2px; background:#555; border:none; }
 
  }
  
+/* ## Class MENU */
+.menu {
+    background:@color-menu-base;
+    .clearfix;
+    &-active { background:darken(@color-success,10%); }
+    & > ul > &-right { float:right !important; }
+    &-horizontal {
+        ul {
+            li {
+                &:hover ul { display:block;}
+                float:left !important;
+                ul {
+                    position:absolute;
+                    width:100px;
+                    
+                    li { float:none !important;  }
+                }
+                
+            }
+        }
+    }
+    
+    &-center { text-align:center; }
+    ul {
+        list-style-type:none;
+        padding:0;
+        margin:0;
+        
+        li {
+            float:none;
+            position:relative;
+            
+            a { 
+                display:block;
+                color:@color-menu-text;
+                padding:10px 15px;
+                &:hover { text-decoration:none; background:@color-menu-base-hover; }
+                
+                
+             }
+             ul { background:darken(@color-menu-base,5%); .box-shadow(1px 1px 10px #888888); display:none;}
+        }
+    }
 
+}
 
 
 
