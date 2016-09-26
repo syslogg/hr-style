@@ -15,16 +15,18 @@ Contribuite: TO-DO
 # Element list:
 - button (Done);
 - table (Done);
-- list;
-- Image;
+- list (Done);
+- Image (Done);
 - form(Done);
 - menu(Done);
 - text (Done);
 - alert (Done);
 - modal;
-- panel;
+- tabs;
+- panel (Done);
 - cards;
 - label;
+- block;
 
 # Utility:
 - clearfix;
@@ -42,6 +44,9 @@ Contribuite: TO-DO
 
 /* - Spacing*/
 @margin-block: 15px;
+
+/* - Opacity */
+@opacity-hover: 0.5;
 
 /* - Fonts */
 @font-default: 'Raleway';
@@ -103,7 +108,7 @@ Contribuite: TO-DO
 /* # Media queries */
 
 /* # Pattern */
-body { .font-settings; }
+body { .font-settings;  }
 img {max-width: 100%;}
 a {
     text-decoration:none;
@@ -120,6 +125,9 @@ a {
 .image {
     &-circle { .border-radius(100%); }
     &-shadow { .box-shadow(0 0 8px rgba(0, 0, 0, .8)); }
+    &-border { padding:5px; border:1px solid #ccc; .border-radius(5px); }
+    &-hover { .transition-duration(0.5s); &:hover { opacity:@opacity-hover; } }
+    &-hover-rm { .transition-duration(0.5s); opacity:@opacity-hover; &:hover { opacity:1; } }
 }
 
 /* ## Class TEXT */
