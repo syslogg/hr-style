@@ -39,6 +39,10 @@ Contribuite: TO-DO
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Raleway:400,400i,700|Roboto:400,700';
 
 /* # Settings  */
+
+/* - Spacing*/
+@margin-block: 15px;
+
 /* - Fonts */
 @font-default: 'Raleway';
 @font-alternative: 'Open Sans';
@@ -89,6 +93,7 @@ Contribuite: TO-DO
 /* # Mixins */
 
 .font-settings { font-family: @font-family;}
+.padding-block { padding:20px; }
 /* - Free prefix */
 .transition-duration (@duration) { -webkit-transition-duration: @duration; -moz-transition-duration: @duration; -ms-transition-duration: @duration; -o-transition-duration: @duration; }
 .border-radius (@radius) { -webkit-border-radius: @radius; -moz-border-radius: @radius; -ms-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;}
@@ -148,7 +153,7 @@ hr { height:2px; background:#555; border:none; }
     &-border { border:1px solid #ccc; }
     &-hover li:hover { background:#ccc; }
     &-img { margin-right:10px; }
-    &-title { vertical-align:10px; color:#333; }
+    &-title { vertical-align:10px; color: #333; }
     &-subtitle { color:#777; }
     
 
@@ -211,7 +216,7 @@ hr { height:2px; background:#555; border:none; }
 /* ## Class ALERT: */
 
 .alert {
-    padding:20px; 
+    .padding-block; 
     &-border { border:1px solid; }
     &-success { color:@color-success; background:@color-success-opacity; }
     &-info { color:@color-info; background:@color-info-opacity; }
@@ -341,6 +346,24 @@ hr { height:2px; background:#555; border:none; }
         }
     }
 
+}
+
+
+/* ## Class PANEL */
+
+.panel {
+
+    margin-bottom:@margin-block;
+
+    &-head { .padding-block; border:1px solid #ccc; border-bottom:0; background:#eee; }
+    &-body { border:1px solid #ccc; border-top:0; .padding-block; }
+    &-no-border { .panel-body, .panel-head { border:0 !important; }  }
+
+    //Colors
+    &-success {  .panel-body {border-color: @color-success !important; } .panel-head { background:@color-success-opacity; border-color: @color-success !important; color: @color-success; } }
+    &-danger {  .panel-body {border-color: @color-danger !important; } .panel-head { background:@color-danger-opacity; border-color: @color-danger !important; color: @color-danger; } }
+    &-warn {  .panel-body {border-color: @color-warn !important; } .panel-head { background:@color-warn-opacity; border-color: @color-warn !important; color: @color-warn; } }
+    &-info {  .panel-body {border-color: @color-info !important; } .panel-head { background:@color-info-opacity; border-color: @color-info !important; color: @color-info; } }
 }
 
 
