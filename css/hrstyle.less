@@ -16,7 +16,7 @@ Contribuite: TO-DO
 - button (Done);
 - table (Done);
 - list (Done);
-- Image (Done);
+- image (Done);
 - form(Done);
 - menu(Done);
 - text (Done);
@@ -24,14 +24,15 @@ Contribuite: TO-DO
 - modal;
 - tabs;
 - panel (Done);
-- cards;
-- label;
+- cards (Done);
+- tags;
 - block;
 
 # Utility:
 - clearfix;
 - floats;
 - hidden;
+- validating
 
 # Pattern
 - **prefix:** hr;
@@ -99,6 +100,11 @@ Contribuite: TO-DO
 
 .font-settings { font-family: @font-family;}
 .padding-block { padding:20px; }
+.color-success { color:white; background:@color-success; }
+.color-danger { color:white; background:@color-danger; }
+.color-info { color:white; background:@color-info; }
+.color-warn { color:white; background:@color-warn; }
+
 /* - Free prefix */
 .transition-duration (@duration) { -webkit-transition-duration: @duration; -moz-transition-duration: @duration; -ms-transition-duration: @duration; -o-transition-duration: @duration; }
 .border-radius (@radius) { -webkit-border-radius: @radius; -moz-border-radius: @radius; -ms-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;}
@@ -119,6 +125,8 @@ a {
 .hr-close { float:right; color:#333; cursor:pointer; font-weight:bold; }
 .float-left { float:left; }
 .float-right { float:right; }
+
+
 /* # OOCSS */
 
 /* ## Class IMAGE */
@@ -410,3 +418,23 @@ hr { height:2px; background:#555; border:none; }
 
 }
 
+.tag {
+
+    padding:0.1em 0.3em;
+    background:#555;
+    color:#fff;
+
+    
+    &-success { .color-success; }
+    &-danger { .color-danger; }
+    &-warn { .color-warn; }
+    &-info { .color-info; }
+
+}
+
+.badge {
+
+    .tag;
+    .border-radius(100%);
+
+}
