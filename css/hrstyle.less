@@ -25,8 +25,8 @@ Contribuite: TO-DO
 - tabs;
 - panel (Done);
 - cards (Done);
-- tags;
-- block;
+- tags (Done);
+- block (Doing);
 
 # Utility:
 - clearfix;
@@ -45,6 +45,8 @@ Contribuite: TO-DO
 
 /* - Spacing*/
 @margin-block: 15px;
+@margin-pattern:0.5em;
+@padding-pattern:0.5em;
 
 /* - Opacity */
 @opacity-hover: 0.5;
@@ -65,6 +67,8 @@ Contribuite: TO-DO
 @btn-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 
 /* - Colors*/
+@color-principal: #0b87bc;
+
 @color-menu-base: #282828;
 @color-menu-text: #fff;
 @color-menu-base-hover:#41c225;
@@ -110,10 +114,12 @@ Contribuite: TO-DO
 .border-radius (@radius) { -webkit-border-radius: @radius; -moz-border-radius: @radius; -ms-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;}
 .box-shadow (@shadow) { -webkit-box-shadow: @shadow; -moz-box-shadow: @shadow; -ms-box-shadow: @shadow; -o-box-shadow: @shadow; box-shadow: @shadow;}
 .clearfix {   zoom: 1; &:before, &:after {     content: "";     display: table;   }   &:after {     clear:both;   } }
+.box-sizing { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 /* # Media queries */
 
 /* # Pattern */
+* { .box-sizing; }
 body { .font-settings;  }
 img {max-width: 100%;}
 a {
@@ -433,8 +439,45 @@ hr { height:2px; background:#555; border:none; }
 }
 
 .badge {
-
     .tag;
     .border-radius(100%);
+}
 
+.block {
+    background:#ccc;
+    padding:0.5em;
+
+    &-bg-dark { color:white; }
+    
+    &-success { .color-success; }
+    &-danger { .color-danger; }
+    &-warn { .color-warn; }
+    &-info { .color-info; }
+    &-principal { background:@color-principal }
+
+    &-margin {
+        &-sm {
+            margin:@margin-pattern;
+            &-v { margin:0 @margin-pattern; }
+            &-h { margin:@margin-pattern 0; }
+        }
+        &-big {
+            margin:@margin-pattern*1.7;
+            &-v { margin:0 @margin-pattern*1.7; }
+            &-h { margin:@margin-pattern*1.7 0; }
+        }
+    }
+
+    &-padding {
+        &-sm {
+            padding:@padding-pattern;
+            &-v { padding:0 @padding-pattern; }
+            &-h { padding:@padding-pattern 0; }
+        }
+        &-big {
+            padding:@padding-pattern*1.7;
+            &-v { padding:0 @padding-pattern*1.7; }
+            &-h { padding:@padding-pattern*1.7 0; }
+        }
+    }
 }
