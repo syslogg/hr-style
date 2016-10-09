@@ -14,9 +14,15 @@ Designed using mobile-first for best experience in various devices.
 - [JQuery](https://github.com/jquery/jquery)
 - [Less](https://github.com/less/less.js)
 - [Normalize.css](https://github.com/necolas/normalize.css/)
+
+# Dependencies develop
 - [gulp](https://github.com/gulpjs/gulp)
+- [gulp-util](https://github.com/gulpjs/gulp-util)
 - [gulp-less](https://github.com/plus3network/gulp-less)
 - [gulp-clean-css](https://github.com/scniro/gulp-clean-css)
+- [gulp-rename](https://github.com/hparra/gulp-rename)
+- [gulp-watch](https://github.com/floatdrop/gulp-watch)
+- [gulp-uglify](https://github.com/terinjokes/gulp-uglify)
 
 
 # Credits
