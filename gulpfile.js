@@ -10,26 +10,42 @@ var watch = require('gulp-watch');
 var path = require('path');
 
 gulp.task('less', function() {
-   gulp.src('./css/*.less')
+   gulp.src('./src/less/*.less')
         .pipe(less({
             paths:[ path.join(__dirname,'less','includes') ]
         }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./dist/css'));
     gulp
-        .src('./dist/hrstyle.css')
+        .src('./dist/css/hrstyle.css')
         .pipe(clean())
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('watch',function(){
-    gulp.watch('./css/*.less',function (event) {
+gulp.task('js',function() {
+    gulp.src('./src/js/*.js')
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('./dist/js'));
+});
+
+gulp.task('watchless',function(){
+    gulp.watch('./src/less/*.less',function (event) {
         util.log('File '+event.path+' was '+event.type+', running tasks...');
         gulp.run('less');
     });
 
+});
+
+gulp.task('watchjs',function() {
+    gulp.watch('./src/js/*.js',function(event){
+        util.log('File '+event.path+' was '+event.type+', running tasks...');
+        gulp.run('js');
+    })
 });
 
 
