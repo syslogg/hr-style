@@ -787,7 +787,7 @@ hr {
   right: 0;
   left: 0;
   position: fixed;
-  width: 50%;
+  display: none;
 }
 .modal-close {
   font-size: 1.5em;
@@ -803,6 +803,7 @@ hr {
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
   height: 100%;
+  display: none;
   position: fixed;
   z-index: 200;
   top: 0;
