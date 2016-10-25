@@ -48,4 +48,12 @@ gulp.task('watchjs',function() {
     })
 });
 
+gulp.task('default',function() {
+    gulp.watch(['./src/js/*.js', './src/less/*.less'],function(event){
+        util.log('File '+event.path+' was '+event.type+', running tasks...');
+        gulp.run('less');
+        gulp.run('js');
+    })
+});
+
 
