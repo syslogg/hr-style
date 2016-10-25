@@ -2,6 +2,7 @@ $(function(){
     
     //- Settings
     $('body').append('<div class="modal-background"></div>');
+    var firstModalOpen = null;
 
     //- Classes: Modal
     var bgModal = $('.modal-background');
@@ -14,6 +15,8 @@ $(function(){
     var modal = function(element) {
         bgModal.fadeIn("fast",function(){
             element.fadeIn("fast");
+            if(firstModalOpen == null)
+                firstModalOpen = element.attr("id");
         });
     };
     
@@ -28,7 +31,11 @@ $(function(){
     //Click to close a modal
     closeModal.click(function(){
         $(this).parent('.modal').fadeOut("fast",function(){
-            bgModal.fadeOut();
+            //console.log($(this).attr("id"));
+            if(firstModalOpen ==  $(this).attr("id")){
+                bgModal.fadeOut();
+                firstModalOpen = null;
+            }
         });
         return false;
     });
