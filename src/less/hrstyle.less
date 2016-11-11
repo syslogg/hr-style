@@ -487,17 +487,16 @@ hr { height:2px; background:#555; border:none; }
 }
 
 .modal { //Responsive
-    z-index:300;
-    margin:0 auto;
-    top:50%;
-    left:0; 
-    position:fixed;
-    display:none;
-    .transform(translateY(-50%));
-    
-    //Test
-    width:50%;
 
+    z-index:300;
+    top:50%;
+    display:none;
+    
+    position: fixed;
+    left: 50%;
+    .transform(translate(-50%, -50%));
+
+    &-ajax {  }
     &-close { font-size:1.5em; position:absolute; top:0; right:10px; .hr-close;}
     &-background { background:rgba(0,0,0,0.4); width:100%; height:100%; position:fixed; display:none; z-index:200; top:0; left:0; }
 }
