@@ -35,18 +35,19 @@ $(function(){
     openModalAjax.on('click',function(e){
         
         $('body').append('<div class="modal" style="background:white;" modal-ajax="true" id="'+$(this).attr("data-id") +'"></div>');
-        
+        console.log($(this).attr("href"));
         //$("#"+$(this).attr("data-id")).load($(this).attr("href"));
         
-        $.ajax({ type: "GET",   
+        /*$.ajax({ type: "GET",   
             url: $(this).attr("href"),   
             //async: false,
             success : function(text)
             {
                 
                 console.log($("#"+$(this).attr("data-id")).append(text));
-            }
-        });
+            },
+            error: function(a,b,c) { console.log(a); console.log(b); console.log(c); }
+        });*/
         
 
         $("#"+$(this).attr("data-id")).html("Testee");
