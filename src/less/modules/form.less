@@ -1,0 +1,22 @@
+/* ## Class FORM */
+.form { 
+    input, select ,textarea{ width:100%; outline:none; .transition-duration(0.4s); }
+    
+    input[type="text"],select,textarea ,input[type="number"], input[type="password"] { padding:12px 20px; margin:10px 0; border-style:solid; border-color:#e0e0e0; border-width:2px; .border-radius(4px);  &:focus { border-color:darken(#e0e0e0,40%) }}
+
+    &-bottom { border-width:0 !important; border-bottom-width:4px !important; .border-radius(0) !important; }
+
+    &-success { border-color:lighten(@color-success, 40%) !important;
+        &:focus { border-color:@color-success !important; }
+    }
+    &-danger { border-color:lighten(@color-danger, 40%) !important;
+        &:focus { border-color:@color-danger !important; }
+    }
+    &-warn { border-color:lighten(@color-warn, 40%) !important;
+        &:focus { border-color:@color-warn !important; }
+    }
+    &-info { border-color:lighten(@color-info, 40%) !important;
+        &:focus { border-color:@color-info !important; }
+    }
+
+ }

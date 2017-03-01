@@ -1,0 +1,57 @@
+.tag {
+
+    padding:0.1em 0.3em;
+    background:#555;
+    color:#fff;
+
+    
+    &-success { .color-success; }
+    &-danger { .color-danger; }
+    &-warn { .color-warn; }
+    &-info { .color-info; }
+
+}
+
+.badge {
+    .tag;
+    .border-radius(100%);
+}
+
+.block {
+    background:#ccc;
+    padding:0.5em;
+
+    &-bg-dark { color:white; }
+    
+    &-success { .color-success; }
+    &-danger { .color-danger; }
+    &-warn { .color-warn; }
+    &-info { .color-info; }
+    &-principal { background:@color-principal }
+
+    &-margin {
+        &-sm {
+            margin:@margin-pattern;
+            &-v { margin:0 @margin-pattern; }
+            &-h { margin:@margin-pattern 0; }
+        }
+        &-big {
+            margin:@margin-pattern*1.7;
+            &-v { margin:0 @margin-pattern*1.7; }
+            &-h { margin:@margin-pattern*1.7 0; }
+        }
+    }
+
+    &-padding {
+        &-sm {
+            padding:@padding-pattern;
+            &-v { padding:0 @padding-pattern; }
+            &-h { padding:@padding-pattern 0; }
+        }
+        &-big {
+            padding:@padding-pattern*1.7;
+            &-v { padding:0 @padding-pattern*1.7; }
+            &-h { padding:@padding-pattern*1.7 0; }
+        }
+    }
+}

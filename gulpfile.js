@@ -15,7 +15,8 @@ var Path = {
     },
     Src:{
         LESS: './src/less/*.less',
-        JS: './src/js/*.js'
+        JS: './src/js/*.js',
+        Modules: './src/less/modules/*.less'
     }
 };
 
@@ -66,7 +67,7 @@ gulp.task('watchjs',function() {
 });
 
 gulp.task('default',function() {
-    gulp.watch([Path.Src.JS, Path.Src.LESS],function(event){
+    gulp.watch([Path.Src.JS, Path.Src.LESS, Path.Src.Modules],function(event){
         util.log('File '+event.path+' was '+event.type+', running tasks...');
         gulp.run('less');
         gulp.run('js');

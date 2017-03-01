@@ -1,0 +1,25 @@
+
+/* - Spacing*/
+@margin-block: 15px;
+@margin-pattern:0.5em;
+@padding-pattern:0.5em;
+
+/* - Opacity */
+@opacity-hover: 0.5;
+
+/* # Mixins */
+
+.font-settings { font-family: @font-family;}
+.padding-block { padding:20px; }
+.color-success { color:white; background:@color-success; }
+.color-danger { color:white; background:@color-danger; }
+.color-info { color:white; background:@color-info; }
+.color-warn { color:white; background:@color-warn; }
+
+/* - Free p assdrefix */
+.transition-duration (@duration) { -webkit-transition-duration: @duration; -moz-transition-duration: @duration; -ms-transition-duration: @duration; -o-transition-duration: @duration; }
+.border-radius (@radius) { -webkit-border-radius: @radius; -moz-border-radius: @radius; -ms-border-radius: @radius; -o-border-radius: @radius; border-radius: @radius;}
+.box-shadow (@shadow) { -webkit-box-shadow: @shadow; -moz-box-shadow: @shadow; -ms-box-shadow: @shadow; -o-box-shadow: @shadow; box-shadow: @shadow;}
+.transform (@trans) { transform: @trans; -webkit-transform: @trans; -moz-transform: @trans; -ms-transform: @trans; -o-transform: @trans;  } 
+.clearfix {   zoom: 1; &:before, &:after {     content: "";     display: table;   }   &:after {     clear:both;   } }
+.box-sizing { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }

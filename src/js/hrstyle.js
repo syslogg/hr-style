@@ -50,7 +50,7 @@ $(function(){
         });*/
         
 
-        $("#"+$(this).attr("data-id")).html("Testee");
+        $("#"+$(this).attr("data-id")).html("Testeeee3");
         //$("#"+$(this).attr("data-id")).load($(this).attr("href"));
         hr.modal($("#"+$(this).attr("data-id")));
         

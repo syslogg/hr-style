@@ -1,0 +1,14 @@
+.modal { //Responsive
+
+    z-index:300;
+    top:50%;
+    display:none;
+    
+    position: fixed;
+    left: 50%;
+    .transform(translate(-50%, -50%));
+
+    &-ajax {  }
+    &-close { font-size:1.5em; position:absolute; top:0; right:10px; .hr-close;}
+    &-background { background:rgba(0,0,0,0.4); width:100%; height:100%; position:fixed; display:none; z-index:200; top:0; left:0; }
+}

@@ -1,0 +1,17 @@
+
+/* ## Class PANEL */
+
+.panel {
+
+    margin-bottom:@margin-block;
+
+    &-head { .padding-block; border:1px solid #ccc; border-bottom:0; background:#eee; }
+    &-body { border:1px solid #ccc; border-top:0; .padding-block; }
+    &-no-border { .panel-body, .panel-head { border:0 !important; }  }
+
+    //Colors
+    &-success {  .panel-body {border-color: @color-success !important; } .panel-head { background:@color-success-opacity; border-color: @color-success !important; color: @color-success; } }
+    &-danger {  .panel-body {border-color: @color-danger !important; } .panel-head { background:@color-danger-opacity; border-color: @color-danger !important; color: @color-danger; } }
+    &-warn {  .panel-body {border-color: @color-warn !important; } .panel-head { background:@color-warn-opacity; border-color: @color-warn !important; color: @color-warn; } }
+    &-info {  .panel-body {border-color: @color-info !important; } .panel-head { background:@color-info-opacity; border-color: @color-info !important; color: @color-info; } }
+}
