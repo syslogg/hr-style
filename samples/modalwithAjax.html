@@ -1,0 +1,22 @@
+<!doctype>
+<html>
+<head>
+    <title>Testing HR Style Framework</title>
+    <link rel="stylesheet" type="text/css"  href="../bower_components/normalize.css/normalize.css" />
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+    <link rel="stylesheet/less" href="../dist/css/hrstyle.min.css">
+
+    <script type="text/javascript" src="../dist/js/hrstyle.min.js"></script>
+</head>
+<body>
+    
+    <a href="#modal" class="btn" rel="hr:modal">Open modal</a>
+    <a href="/samples/text.html" data-id="modalAjax" class="btn btn-success" rel="hr:modalAjax">Open modal with ajax</a>
+
+    <div id="modal" class="modal card-two" style="background:white;">Modal<span class="modal-close">x</span><a href="#modal3" rel="hr:modal">Other modal</a></div>
+    <div id="modal3" class="modal card-two" style="background:white;">Modal<span class="modal-close">x</span><a href="#" rel="hr:modal">Other modal2</a></div>
+
+    
+</body>
+</html>
