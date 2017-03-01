@@ -26,15 +26,19 @@ gulp.task('less', function() {
         .pipe(less({
             paths:[ path.join(__dirname,'less','includes') ]
         }))
+        .pipe(clean())
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulp.dest(Path.Dist.CSS));
-        
+        /*
     gulp
         .src(Path.Dist.CSS + '/hrstyle.css')
         .pipe(clean())
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest(Path.Dist.CSS));
+        .pipe(gulp.dest(Path.Dist.CSS));*/
 });
 
 gulp.task('js',function() {
