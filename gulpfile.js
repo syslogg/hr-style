@@ -5,10 +5,12 @@ var rename = require('gulp-rename');
 var clean = require('gulp-clean-css');
 var less = require('gulp-less');
 var watch = require('gulp-watch');
+var browserSync = require('browser-sync').create();
 
 
 
 var Path = {
+    BaseDir: './',
     Dist: {
         CSS: './dist/css',
         JS: './dist/js'
@@ -32,14 +34,6 @@ gulp.task('less', function() {
             suffix: '.min'
         }))
         .pipe(gulp.dest(Path.Dist.CSS));
-        /*
-    gulp
-        .src(Path.Dist.CSS + '/hrstyle.css')
-        .pipe(clean())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest(Path.Dist.CSS));*/
 });
 
 gulp.task('js',function() {
@@ -49,29 +43,23 @@ gulp.task('js',function() {
             suffix: '.min'
         }))
         .pipe(gulp.dest(Path.Dist.JS));
+        //.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('watchless',function(){
-    gulp.watch(Path.Src.LESS,function (event) {
+gulp.task('default', [ 'js', 'less', 'browersync' ], function() {
+    gulp.watch([Path.Src.LESS, Path.Src.Modules],function(event){
         util.log('File '+event.path+' was '+event.type+', running tasks...');
         gulp.run('less');
     });
-
-});
-
-gulp.task('watchjs',function() {
-    gulp.watch(Path.Src.JS,function(event){
+    gulp.watch([ Path.Src.JS ], function(event){
         util.log('File '+event.path+' was '+event.type+', running tasks...');
         gulp.run('js');
-    })
+    });
 });
 
-gulp.task('default',function() {
-    gulp.watch([Path.Src.JS, Path.Src.LESS, Path.Src.Modules],function(event){
-        util.log('File '+event.path+' was '+event.type+', running tasks...');
-        gulp.run('less');
-        gulp.run('js');
-    })
+gulp.task('browersync',function() {
+    browserSync.init([Path.Src.JS, Path.Src.LESS, Path.Src.Modules],{
+        server: {baseDir: Path.BaseDir}
+    });
+    gulp.watch(Path.BaseDir + '**/*.*').on('change', browserSync.reload);
 });
-
-

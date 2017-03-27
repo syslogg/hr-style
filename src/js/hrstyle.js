@@ -1,5 +1,5 @@
 $(function(){
-    
+
     //- Settings
     $('body').append('<div class="modal-background"></div>');
     var firstModalOpen = null;
@@ -8,8 +8,8 @@ $(function(){
     //- Classes: Modal
     var bgModal = $('.modal-background');
     var closeModal = $('.modal-close');
-    var openModal = $('[rel="hr:modal"]'); 
-    var openModalAjax = $('[rel="hr:modalAjax"]'); 
+    var openModal = $('[rel="hr:modal"]');
+    var openModalAjax = $('[rel="hr:modalAjax"]');
 
     //- Functions
     //Function that calls a modal
@@ -23,7 +23,7 @@ $(function(){
             });
         }
     };
-    
+
     //- Events
     //Click to open a modal
     openModal.click(function(){
@@ -33,33 +33,33 @@ $(function(){
     });
 
     openModalAjax.on('click',function(e){
-        
+
         $('body').append('<div class="modal" style="background:white;" modal-ajax="true" id="'+$(this).attr("data-id") +'"></div>');
         console.log($(this).attr("href"));
         //$("#"+$(this).attr("data-id")).load($(this).attr("href"));
-        
-        /*$.ajax({ type: "GET",   
-            url: $(this).attr("href"),   
+
+        /*$.ajax({ type: "GET",
+            url: $(this).attr("href"),
             //async: false,
             success : function(text)
             {
-                
+
                 console.log($("#"+$(this).attr("data-id")).append(text));
             },
             error: function(a,b,c) { console.log(a); console.log(b); console.log(c); }
         });*/
-        
+
 
         $("#"+$(this).attr("data-id")).html("Testeeee3");
         //$("#"+$(this).attr("data-id")).load($(this).attr("href"));
         hr.modal($("#"+$(this).attr("data-id")));
-        
+
         return false;
     });
 
     //Click to close a modal
     closeModal.on('click',function(){
-        $(this).parent('.modal').fadeOut("fast",function(){ 
+        $(this).parent('.modal').fadeOut("fast",function(){
 
             if(firstModalOpen ==  $(this).attr("id")){
                 bgModal.fadeOut();
@@ -71,6 +71,6 @@ $(function(){
         });
         return false;
     });
-   
+
 
 });
