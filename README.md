@@ -9,6 +9,7 @@ Designed using mobile-first for best experience in various devices.
 - Add structure **HTML** and **OOCSS**
 - Add style in elements
 - Add grid system
+- Refactor JQuery Code
 
 # Dependencies
 - [JQuery](https://github.com/jquery/jquery)
