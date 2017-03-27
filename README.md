@@ -16,7 +16,7 @@ Designed using mobile-first for best experience in various devices.
 - [Less](https://github.com/less/less.js)
 - [Normalize.css](https://github.com/necolas/normalize.css/)
 
-# Dependencies develop
+# devDependencies
 - [gulp](https://github.com/gulpjs/gulp)
 - [gulp-util](https://github.com/gulpjs/gulp-util)
 - [gulp-less](https://github.com/plus3network/gulp-less)
