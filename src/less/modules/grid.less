@@ -1,7 +1,7 @@
 /*
 
     -= HR GRID =-
-    - Layout grid    
+    - Layout grid
         - Class:
             - layout-fluid
                 * root of layout with width in 100%.
@@ -10,11 +10,19 @@
 */
 
 @width-fluid: 80%;
-@width-fixed: 1024px;
+@width-fixed: 960px;
+
+@margin-fixed: 20px;
 
 /* -= Root of layout =-*/
 .layout { margin:0 auto; }
 .layout-fluid { width:@width-fluid; .layout; }
 .layout-fixed { width: @width-fixed; .layout; }
 
+.layout-row { background:#000 }
 
+[class*='layout-'] {  }
+
+
+/* - Size XS */
+[class*='layout-xs-'] { margin-left: @margin-fixed; background:black; }

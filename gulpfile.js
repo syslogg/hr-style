@@ -6,8 +6,7 @@ var clean = require('gulp-clean-css');
 var less = require('gulp-less');
 var watch = require('gulp-watch');
 var browserSync = require('browser-sync').create();
-
-
+var sourceMaps = require('gulp-sourcemaps');
 
 var Path = {
     BaseDir: './',
@@ -23,9 +22,10 @@ var Path = {
 };
 
 var path = require('path');
-
+''
 gulp.task('less', function() {
    gulp.src(Path.Src.LESS)
+        .pipe(sourceMaps.init())
         .pipe(less({
             paths:[ path.join(__dirname,'less','includes') ]
         }))
@@ -33,17 +33,19 @@ gulp.task('less', function() {
         .pipe(rename({
             suffix: '.min'
         }))
+        .pipe(sourceMaps.write('./'))
         .pipe(gulp.dest(Path.Dist.CSS));
 });
 
 gulp.task('js',function() {
     gulp.src(Path.Src.JS)
+        .pipe(sourceMaps.init())
         .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
+        .pipe(sourceMaps.write('./maps'))
         .pipe(gulp.dest(Path.Dist.JS));
-        //.pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('default', [ 'js', 'less', 'browersync' ], function() {
@@ -62,4 +64,9 @@ gulp.task('browersync',function() {
         server: {baseDir: Path.BaseDir}
     });
     gulp.watch(Path.BaseDir + '**/*.*').on('change', browserSync.reload);
+});
+
+gulp.task('build', function() {
+    gulp.run('less');
+    gulp.run('jsH');
 });
