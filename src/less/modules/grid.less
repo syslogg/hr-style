@@ -9,8 +9,19 @@
                 * root of layout with width variant.
 */
 
+/* -= Devices width =- */
+/* Sizes:xs , s, md, l */
+@max-device-xs: 520px;
+@max-device-s: 960px;
+@max-device-md: 1920px;
+
+
+/* -= Grid configuration =- */
 @width-fluid: 80%;
 @width-fixed: 960px;
+
+@gutter: 1%;
+@grid-amount: 12;
 
 @margin-fixed: 20px;
 
@@ -19,10 +30,39 @@
 .layout-fluid { width:@width-fluid; .layout; }
 .layout-fixed { width: @width-fixed; .layout; }
 
-.layout-row { background:#000 }
+.layout-row { position:relative; .clearfix;}
 
-[class*='layout-'] {  }
+[class="layout-xs-*"],[class="layout-s-*"],[class="layout-md-*"],[class="layout-l-*"] { .make-cols(12); }
+
+//loop for layout grid
+.layout-loop(@i) when (@i > 0){
+    .layout-row .layout-xs-@{i}{
+        .make-cols(@i);
+    }
+
+    @media (min-width:@max-device-xs) {
+        .layout-row .layout-s-@{i} {
+            .make-cols(@i);
+        }
+    }
+
+    @media (min-width: @max-device-s) {
+        .layout-row .layout-md-@{i} {
+            .make-cols(@i);
+        }
+    }
+
+    @media (min-width: @max-device-md) {
+        .layout-row .layout-l-@{i} {
+            .make-cols(@i);
+        }
+    }
+    
+    .layout-loop(@i - 1);
+}
+.layout-loop(@grid-amount);
 
 
-/* - Size XS */
-[class*='layout-xs-'] { margin-left: @margin-fixed; background:black; }
+
+//Mixin for columns
+.make-cols(@col) { float:left; margin:0 @gutter !important; min-height: 1px; width:((100%/@grid-amount)*@col) - 2*@gutter; }
