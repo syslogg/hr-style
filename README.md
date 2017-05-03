@@ -5,10 +5,7 @@ Designed using mobile-first for best experience in various devices.
 - To-do
  
 # To-do list
-- Set default classes
-- Add structure **HTML** and **OOCSS**
-- Add style in elements
-- Add grid system
+- Create documentation
 - Refactor JQuery Code
 
 # Dependencies
