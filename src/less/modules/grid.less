@@ -32,37 +32,50 @@
 
 .layout-row { position:relative; .clearfix;}
 
-[class="layout-xs-*"],[class="layout-s-*"],[class="layout-md-*"],[class="layout-l-*"] { .make-cols(12); }
+[class*="layout-xs-"],[class*="layout-s-"],[class*="layout-md-"],[class*="layout-l-"] { .make-cols(12); float:left; margin:0 @gutter !important; min-height: 1px; }
 
 //loop for layout grid
-.layout-loop(@i) when (@i > 0){
-    .layout-row .layout-xs-@{i}{
+.layout-loop-xs(@i) when (@i <= @grid-amount){
+    .layout-xs-@{i}{
         .make-cols(@i);
     }
-
-    @media (min-width:@max-device-xs) {
-        .layout-row .layout-s-@{i} {
-            .make-cols(@i);
-        }
-    }
-
-    @media (min-width: @max-device-s) {
-        .layout-row .layout-md-@{i} {
-            .make-cols(@i);
-        }
-    }
-
-    @media (min-width: @max-device-md) {
-        .layout-row .layout-l-@{i} {
-            .make-cols(@i);
-        }
-    }
-    
-    .layout-loop(@i - 1);
+    .layout-loop-xs(@i + 1);
 }
-.layout-loop(@grid-amount);
+.layout-loop-xs(1);
+
+@media screen and (min-width:@max-device-xs) {
+    .layout-loop-s(@i) when (@i <= @grid-amount) {
+        .layout-s-@{i} {
+            .make-cols(@i);
+        }
+        .layout-loop-s(@i + 1);
+    }
+    .layout-loop-s(1);
+}
+
+@media screen and (min-width: @max-device-s) {
+    .layout-loop-md(@i) when (@i <= @grid-amount) {
+        .layout-md-@{i} {
+            .make-cols(@i);
+        }
+        .layout-loop-md(@i + 1);
+    }
+    .layout-loop-md(1);
+}
+
+@media screen and (min-width: @max-device-md) {
+    .layout-loop-l(@i) when (@i <= @grid-amount) {
+        .layout-l-@{i} {
+            .make-cols(@i);
+        }
+        .layout-loop-l(@i + 1);
+    }
+    .layout-loop-l(1);
+}
+    
 
 
 
 //Mixin for columns
-.make-cols(@col) { float:left; margin:0 @gutter !important; min-height: 1px; width:((100%/@grid-amount)*@col) - 2*@gutter; }
+.make-cols(@col) { width:((100%/@grid-amount)*@col) - 2*@gutter; }
+.make-offset-cols(@col) { margin-left:@col; }
