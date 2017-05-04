@@ -39,6 +39,12 @@
     .layout-xs-@{i}{
         .make-cols(@i);
     }
+
+    .layout-loop-xs(@i) when not (@i = 12) {
+            .layout-xs-offset-@{i} {
+                .make-offset-cols(@i);
+            }
+        }
     .layout-loop-xs(@i + 1);
 }
 .layout-loop-xs(1);
@@ -48,8 +54,14 @@
         .layout-s-@{i} {
             .make-cols(@i);
         }
+        .layout-loop-s(@i) when not (@i = 12) {
+            .layout-s-offset-@{i} {
+                .make-offset-cols(@i);
+            }
+        }
         .layout-loop-s(@i + 1);
     }
+    
     .layout-loop-s(1);
 }
 
@@ -57,6 +69,11 @@
     .layout-loop-md(@i) when (@i <= @grid-amount) {
         .layout-md-@{i} {
             .make-cols(@i);
+        }
+        .layout-loop-md(@i) when not (@i = 12) {
+            .layout-md-offset-@{i} {
+                .make-offset-cols(@i);
+            }
         }
         .layout-loop-md(@i + 1);
     }
@@ -68,6 +85,11 @@
         .layout-l-@{i} {
             .make-cols(@i);
         }
+        .layout-loop-md(@i) when not (@i = 12) {
+            .layout-md-offset-@{i} {
+                .make-offset-cols(@i);
+            }
+        }
         .layout-loop-l(@i + 1);
     }
     .layout-loop-l(1);
@@ -78,4 +100,4 @@
 
 //Mixin for columns
 .make-cols(@col) { width:((100%/@grid-amount)*@col) - 2*@gutter; }
-.make-offset-cols(@col) { margin-left:@col; }
+.make-offset-cols(@col) { margin-left:((100%/@grid-amount)*@col); }
