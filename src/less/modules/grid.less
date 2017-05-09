@@ -11,28 +11,32 @@
 
 /* -= Devices width =- */
 /* Sizes:xs , s, md, l */
+/* Devices smaller than 500px wide */
 @max-device-xs: 520px;
+
+/* Devices smaller than 960px wide */
 @max-device-s: 960px;
+
+/* Devices smaller than 960px wide */
 @max-device-md: 1920px;
 
 
 /* -= Grid configuration =- */
 @width-fluid: 80%;
 @width-fixed: 960px;
-
 @gutter: 1%;
 @grid-amount: 12;
+@padding-block: 0.3em;
 
-@margin-fixed: 20px;
 
 /* -= Root of layout =-*/
 .layout { margin:0 auto; }
 .layout-fluid { width:@width-fluid; .layout; }
 .layout-fixed { width: @width-fixed; .layout; }
 
-.layout-row { position:relative; .clearfix;}
+.layout-row { position:relative; .clearfix; margin:@gutter 0; }
 
-[class*="layout-xs-"],[class*="layout-s-"],[class*="layout-md-"],[class*="layout-l-"] { .make-cols(12); float:left; margin:0 @gutter !important; min-height: 1px; }
+[class*="layout-xs-"],[class*="layout-s-"],[class*="layout-md-"],[class*="layout-l-"] { .make-cols(12); float:left; margin:0 @gutter; min-height: 1px; padding:@padding-block; }
 
 //loop for layout grid
 .layout-loop-xs(@i) when (@i <= @grid-amount){
@@ -40,11 +44,9 @@
         .make-cols(@i);
     }
 
-    .layout-loop-xs(@i) when not (@i = 12) {
-            .layout-xs-offset-@{i} {
-                .make-offset-cols(@i);
-            }
-        }
+    .layout-xs-offset-@{i} {
+        .make-offset-cols(@i);
+    }
     .layout-loop-xs(@i + 1);
 }
 .layout-loop-xs(1);
@@ -54,10 +56,8 @@
         .layout-s-@{i} {
             .make-cols(@i);
         }
-        .layout-loop-s(@i) when not (@i = 12) {
-            .layout-s-offset-@{i} {
-                .make-offset-cols(@i);
-            }
+        .layout-s-offset-@{i} {
+            .make-offset-cols(@i);
         }
         .layout-loop-s(@i + 1);
     }
@@ -70,10 +70,8 @@
         .layout-md-@{i} {
             .make-cols(@i);
         }
-        .layout-loop-md(@i) when not (@i = 12) {
-            .layout-md-offset-@{i} {
-                .make-offset-cols(@i);
-            }
+        .layout-md-offset-@{i} {
+            .make-offset-cols(@i);
         }
         .layout-loop-md(@i + 1);
     }
@@ -85,19 +83,14 @@
         .layout-l-@{i} {
             .make-cols(@i);
         }
-        .layout-loop-md(@i) when not (@i = 12) {
-            .layout-md-offset-@{i} {
-                .make-offset-cols(@i);
-            }
+        .layout-md-offset-@{i} {
+            .make-offset-cols(@i);
         }
         .layout-loop-l(@i + 1);
     }
     .layout-loop-l(1);
 }
-    
-
-
 
 //Mixin for columns
 .make-cols(@col) { width:((100%/@grid-amount)*@col) - 2*@gutter; }
-.make-offset-cols(@col) { margin-left:((100%/@grid-amount)*@col); }
+.make-offset-cols(@col) { margin-left:((100%/@grid-amount)*@col) + @gutter ; }
