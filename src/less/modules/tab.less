@@ -1,0 +1,44 @@
+//TODO: COLORS
+.tab {
+    &-contents &-content {
+        display:none; 
+    }
+
+    & &-contents &-content:first-child {
+        display:block;
+    }
+
+    &-active {
+        background:greyscale(red);
+    }
+
+    &-header {
+        .clearfix;
+        padding:0;
+        margin:0;
+        background:grey;
+        
+
+        ul {
+            list-style-type:none;
+            margin:0;
+            padding:0;
+            li {
+                float:left !important;
+                a {
+                    display:block;
+                    padding:10px 15px;
+                    color:@color-menu-text;
+
+                    &:hover {
+                        background:darken(#fff,80%);
+                        text-decoration:none;
+                    }
+                }
+
+            }
+        }
+        
+    }
+
+}

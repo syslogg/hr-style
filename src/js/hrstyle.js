@@ -35,7 +35,7 @@ $(function(){
     openModalAjax.on('click',function(e){
 
         $('body').append('<div class="modal" style="background:white;" modal-ajax="true" id="'+$(this).attr("data-id") +'"></div>');
-        console.log($(this).attr("href"));
+        //console.log($(this).attr("href"));
         //$("#"+$(this).attr("data-id")).load($(this).attr("href"));
 
         /*$.ajax({ type: "GET",
@@ -50,7 +50,7 @@ $(function(){
         });*/
 
 
-        $("#"+$(this).attr("data-id")).html("Testeeee3");
+        //$("#"+$(this).attr("data-id")).html("Testeeee3");
         //$("#"+$(this).attr("data-id")).load($(this).attr("href"));
         hr.modal($("#"+$(this).attr("data-id")));
 
