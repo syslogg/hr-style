@@ -5,26 +5,43 @@ $(function() {
     //Selectors
     var tab = $(".tab");
 
+    //Classes
+    var tabTxt = ".tab";
+    var tabHeader = ".tab-header";
+    var tabContent = ".tab-content";
+    var tabActive = ".tab-active";
+    var tabActiveNc = "tab-active";
+
+
     //settings
     var speedAnimation = 200;
 
     var hrs = {
         'tab': function(tabParam){
-            var btnClickTab = tabParam.find(".tab-header a");
-            btnClickTab.first().addClass("tab-active");
+            var btnClickTab = tabParam.find(tabHeader+" a");
+            tabParam.each(function() {
+                $(this).find(tabHeader+" a").first().addClass(tabActiveNc);
+            });
 
             btnClickTab.on("click",function() {
+
+                if($(this).is(tabActive)) {
+                    return false;
+                }
+
                 var divTab = $($(this).attr("href"));
-                btnClickTab.removeClass("tab-active");
-                tabParam.find(".tab-contents .tab-content").fadeOut(speedAnimation);
+                var test = $(this).parents(tabHeader).find(tabActive);
+                
+                $(this).parents(tabTxt).find(tabContent).fadeOut(speedAnimation);
                 divTab.delay(speedAnimation).fadeIn(speedAnimation);
-                $(this).addClass("tab-active");
+                test.removeClass(tabActiveNc);
+                $(this).addClass(tabActiveNc);
             });
+
+            
         }
     };
 
     //Event
     hrs.tab(tab);
-    
-
 });
