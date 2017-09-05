@@ -68,5 +68,5 @@ gulp.task('browersync',function() {
 
 gulp.task('build', function() {
     gulp.run('less');
-    gulp.run('jsH');
+    gulp.run('js');
 });
