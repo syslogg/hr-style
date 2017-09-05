@@ -3,15 +3,22 @@
   "authors": [
     "Hendy Rodrigues Ferreira da Silva <mr.syslogg@gmail.com>"
   ],
-  "description": "framework css based on material design",
+  "description": "The HR Style was developed focusing on agile development and beautiful design based on material design always look for extensibility, perfomance and ease. Designed using mobile-first for best experience in various devices.",
   "main": "css/hrstyle.less",
   "keywords": [
+    "HR Style",
+    "Material Design",
+    "Framework",
     "material-design",
     "material ui",
-    "hendy rodrigues"
+    "hendy rodrigues",
+    "hr"  
+  ],
+  "tags":[
+    
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/syslogg/hr-style#readme",
   "dependencies": {
     "less":"latest",
     "jquery":"latest",

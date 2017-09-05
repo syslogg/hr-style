@@ -1,7 +1,7 @@
 {
   "name": "hr-style",
-  "version": "1.0.0",
-  "description": "Develop based on material design",
+  "version": "0.8.0",
+  "description": "The HR Style was developed focusing on agile development and beautiful design based on material design always look for extensibility, perfomance and ease. Designed using mobile-first for best experience in various devices.",
   "main": "tests/test.html",
   "directories": {
     "test": "tests"
@@ -16,7 +16,11 @@
   "keywords": [
     "HR Style",
     "Material Design",
-    "Framework"
+    "Framework",
+    "material-design",
+    "material ui",
+    "hendy rodrigues",
+    "hr"
   ],
   "author": "Hendy Rodrigues F. Silva",
   "license": "MIT",
